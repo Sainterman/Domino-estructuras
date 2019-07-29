@@ -14,8 +14,14 @@ public class Dominoes {
     /**
      * @param args the command line arguments
      */
+    static Vector<String> jugador1 = new  Vector<>();
+    static Vector<String> jugador2= new  Vector<>();
+    static Vector<String> jugador3= new  Vector<>();
+    static Vector<String> jugador4= new  Vector<>();
+    static Vector<String> jugador5= new  Vector<>();
+    static boolean jugando = true;
+    static int numJugadores;
     
-
     public static void main(String[] args) {
         // TODO code application logic here
         Vector<Integer> dealer = new Vector<Integer>();
@@ -50,12 +56,10 @@ public class Dominoes {
         fichas.add("6|6");
         
         Scanner input = new Scanner(System.in);
-        System.out.println("Cuantos jugadores?");
-        int numJugadores = input.nextInt();
-        if(numJugadores > 5 || numJugadores < 2){
-            System.out.println("Escoja entre 2 a 5 jugadores");
-            numJugadores = input.nextInt();
-        }
+        do{
+            juega();
+        }while(juega());
+       
         crearJugadores(fichas, numJugadores);
         //System.out.println(fichas);
         
@@ -84,11 +88,7 @@ public class Dominoes {
         } else if (numJugadores == 4 || numJugadores ==5){
             numFichasPorJugador = 5;
         }
-        Vector<String> jugador1= new  Vector<>();
-        Vector<String> jugador2= new  Vector<>();
-        Vector<String> jugador3= new  Vector<>();
-        Vector<String> jugador4= new  Vector<>();
-        Vector<String> jugador5= new  Vector<>();
+       
         
         switch (numJugadores){
             case 2:
@@ -96,6 +96,8 @@ public class Dominoes {
                     getFicha(fichas, jugador1);
                     getFicha(fichas, jugador2);
                 }
+               
+                       
                 System.out.print(jugador1);
                 System.out.print(jugador2);
               
@@ -140,5 +142,50 @@ public class Dominoes {
                 break;
         }
         
+    }
+
+    public static boolean juega(){
+        boolean gameOver =false;
+        
+        Scanner input = new Scanner(System.in);
+        do{
+        
+            System.out.println("Escoja entre 2 a 5 jugadores");
+            numJugadores = input.nextInt();
+        
+        }while(numJugadores > 5 || numJugadores < 2);
+        switch(numJugadores){
+            case 2:
+                quienEmpieza(jugador1,jugador2);
+                break;
+        }
+        
+        if(gameOver){
+            return false;
+        }else {
+            return true;
+        }
+        
+    }
+    
+    public static Vector<String> quienEmpieza(Vector<String>j1,Vector<String> j2,Vector<String> j3,Vector<String> j4,Vector<String> j5){
+        
+        
+        return jugador;
+    }
+    public static int quienEmpieza(Vector<String>j1,Vector<String> j2,Vector<String> j3){
+        
+        
+        return jugador;
+    }
+    public static int quienEmpieza(Vector<String>j1,Vector<String> j2,Vector<String> j3,Vector<String> j4){
+        
+        
+        return jugador;
+    }
+    public static int quienEmpieza(Vector<String>j1,Vector<String> j2){
+        
+        
+        return jugador;
     }
 }
