@@ -21,7 +21,7 @@ public class Dominoes {
     static Vector<String> jugador5= new  Vector<>();
     static boolean jugando = true;
     static int numJugadores;
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
         Vector<Integer> dealer = new Vector<Integer>();
@@ -62,7 +62,6 @@ public class Dominoes {
        
         crearJugadores(fichas, numJugadores);
         //System.out.println(fichas);
-        
     }
     
     
@@ -188,4 +187,58 @@ public class Dominoes {
         
         return jugador;
     }
+    
+    
+    public static Vector<String> siguiente (Vector<String> jugador){
+        switch (numJugadores) {
+            case 2:
+                if (jugador == jugador1){
+                    return jugador2;
+                }
+                else {
+                    return jugador1;
+                }
+            case 3:
+                if (jugador == jugador1){
+                    return jugador2;
+                }
+                else if (jugador == jugador2) {
+                    return jugador3;
+                }
+                else {
+                    return jugador1;
+                }
+            case 4:
+                if (jugador == jugador1){
+                    return jugador2;
+                }
+                else if (jugador == jugador2) {
+                    return jugador3;
+                }
+                else if (jugador==jugador3){
+                    return jugador4;
+                }
+                else {
+                    return jugador1;
+                }
+            case 5:
+                if (jugador == jugador1){
+                    return jugador2;
+                }
+                else if (jugador == jugador2) {
+                    return jugador3;
+                }
+                else if (jugador==jugador3){
+                    return jugador4;
+                }
+                else if (jugador == jugador4) {
+                    return jugador5;
+                }
+                else {
+                    return jugador1;
+                }
+        }
+        return jugador1;
+    }
+    
 }
